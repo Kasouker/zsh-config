@@ -142,7 +142,9 @@ source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias v='nvim'
 alias home='cd /mnt/c/Users/gazou/Projet_Perso/'
 alias Plouf='cd /mnt/c/Users/gazou/Projet_Perso/42/Piscine/'
+alias Plouf-BipBip='cd /mnt/c/users/gazou/Projet_Perso/42/Piscine/Piscine-bot-discord/'
 alias Wahou='cd /mnt/c/Users/gazou/Projet_Perso/TDVN°4/'
+alias Arbre='cd /mnt/c/Users/gazou/Projet_Perso/42/Student/'
 alias gccc='cc -g -Wall -Wextra -Werror'
 export EDITOR=nvim
 
