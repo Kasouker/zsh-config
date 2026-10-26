@@ -135,8 +135,13 @@ zle -N _fcd_widget
 bindkey '^f' _ff_widget
 bindkey '^g' _fcd_widget
 
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Plugins : ceux du système, sinon ceux installés sans sudo dans ~/.local/share/zsh
+for _p in zsh-autosuggestions zsh-syntax-highlighting; do
+	for _d in /usr/share/$_p ~/.local/share/zsh/$_p; do
+		[ -f $_d/$_p.zsh ] && { source $_d/$_p.zsh; break; }
+	done
+done
+unset _p _d
 
 # Aliasi
 # Dossier des projets : celui de Windows sous WSL, ~/Projet_Perso sous Linux
