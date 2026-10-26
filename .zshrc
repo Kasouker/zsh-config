@@ -139,12 +139,18 @@ source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Aliasi
+# Dossier des projets : celui de Windows sous WSL, ~/Projet_Perso sous Linux
+if [ -d /mnt/c/Users/gazou/Projet_Perso ]; then
+	PROJETS=/mnt/c/Users/gazou/Projet_Perso
+else
+	PROJETS=$HOME/Projet_Perso
+fi
 alias v='nvim'
-alias home='cd /mnt/c/Users/gazou/Projet_Perso/'
-alias Plouf='cd /mnt/c/Users/gazou/Projet_Perso/42/Piscine/'
-alias Plouf-BipBip='cd /mnt/c/users/gazou/Projet_Perso/42/Piscine/Piscine-bot-discord/'
-alias Wahou='cd /mnt/c/Users/gazou/Projet_Perso/TDVN°4/'
-alias Arbre='cd /mnt/c/Users/gazou/Projet_Perso/42/Student/'
+alias home='cd $PROJETS/'
+alias Plouf='cd $PROJETS/42/Piscine/'
+alias Plouf-BipBip='cd $PROJETS/42/Piscine/Piscine-bot-discord/'
+alias Wahou='cd $PROJETS/TDVN°4/'
+alias Arbre='cd $PROJETS/42/Student/'
 alias gccc='cc -g -Wall -Wextra -Werror'
 export EDITOR=nvim
 
