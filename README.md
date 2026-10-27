@@ -8,10 +8,10 @@ L'installation ci-dessous met **tout dans ton dossier personnel** (`~/.local`) :
 
 ## Installation (Linux, sans sudo)
 
-Une seule ligne à copier :
+Une seule ligne à copier (elle marche aussi pour mettre à jour : relance-la quand tu veux) :
 
 ```bash
-git clone https://github.com/Kasouker/zsh-config.git ~/.config/zsh && bash ~/.config/zsh/install.sh
+{ [ -f ~/.config/zsh/install.sh ] || git clone https://github.com/Kasouker/zsh-config.git ~/.config/zsh; } && git -C ~/.config/zsh pull -q && bash ~/.config/zsh/install.sh
 ```
 
 Le script `install.sh` met tout dans ton dossier personnel (`~/.local`) et saute ce qui est déjà là :
