@@ -61,8 +61,11 @@ echo "prêt"
 
 step "~/.zshrc"
 if [ -e "$HOME/.zshrc" ] && [ ! -L "$HOME/.zshrc" ]; then
-	mv "$HOME/.zshrc" "$HOME/.zshrc.bak"
-	echo "ancien ~/.zshrc gardé en ~/.zshrc.bak (recopie tes alias dans ~/.zshrc.local)"
+	# Un ~/.zshrc.bak déjà là n'est jamais écrasé : le nouveau prend la date en plus
+	bak="$HOME/.zshrc.bak"
+	[ -e "$bak" ] && bak="$bak.$(date +%s)"
+	mv "$HOME/.zshrc" "$bak"
+	echo "ancien ~/.zshrc gardé en $bak (recopie tes alias dans ~/.zshrc.local)"
 fi
 ln -sfn "$HOME/.config/zsh/.zshrc" "$HOME/.zshrc"
 echo "~/.zshrc -> ~/.config/zsh/.zshrc"
