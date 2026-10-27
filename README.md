@@ -16,12 +16,13 @@ zsh --version && git --version && curl --version | head -1 && unzip -v | head -1
 
 ## 1. Installer les outils (sans sudo)
 
-Copie-colle tout le bloc dans un terminal (Linux x86_64). Un outil déjà installé est sauté.
+Copie-colle tout le bloc dans un terminal (Linux x86_64). Un outil déjà installé est sauté. La fonction `dl` télécharge
+la dernière version d'un outil depuis GitHub dans `~/.local/bin` ; la boucle de la fin installe les suggestions grises
+et la coloration des commandes.
 
 ```bash
 mkdir -p ~/.local/bin && export PATH="$HOME/.local/bin:$PATH"
 
-# dl <dépôt GitHub> <fin du nom de l'archive> <programmes...> : télécharge la dernière version dans ~/.local/bin
 dl() {
 	local repo=$1 end=$2 url tmp
 	shift 2
@@ -46,7 +47,6 @@ command -v fd >/dev/null || command -v fdfind >/dev/null || dl sharkdp/fd x86_64
 command -v yazi >/dev/null || dl sxyazi/yazi yazi-x86_64-unknown-linux-musl.zip yazi ya
 command -v lazygit >/dev/null || dl jesseduffield/lazygit linux_x86_64.tar.gz lazygit
 
-# Les suggestions grises et la coloration des commandes
 mkdir -p ~/.local/share/zsh
 for p in zsh-autosuggestions zsh-syntax-highlighting; do
 	[ -d ~/.local/share/zsh/$p ] || git clone -q --depth 1 https://github.com/zsh-users/$p ~/.local/share/zsh/$p
