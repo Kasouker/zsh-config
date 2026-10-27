@@ -1,3 +1,6 @@
+# Les outils installés sans sudo (~/.local/bin) : avant tout le reste, starship et fzf sont appelés juste après
+export PATH="$HOME/.local/bin:$PATH"
+
 # Historique
 HISTSIZE=10000
 SAVEHIST=10000
@@ -160,7 +163,6 @@ function y() {
 eval "$(dircolors -b)"
 export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34"
 
-export PATH="$HOME/.local/bin:$PATH"
 
 # Ce qui est propre à cette machine (alias de projets, chemins…) : ~/.zshrc.local, qui n'est pas dans le dépôt
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
