@@ -60,6 +60,17 @@ export BAT_THEME="ansi"
 alias ls='eza --icons --group-directories-first'
 alias ll='eza -lah --icons --group-directories-first --git'
 alias lt='eza --tree --level=2 --icons'
+
+# Couleur des fichiers dans ls selon le langage (les mêmes que les icônes de Neovim)
+export EZA_COLORS="\
+*.html=38;2;228;77;38:*.css=38;2;66;165;245:*.scss=38;2;245;83;133:*.svg=38;2;255;177;59:*.xml=38;2;227;121;51:\
+*.js=38;2;203;203;65:*.mjs=38;2;241;224;90:*.jsx=38;2;32;194;227:*.ts=38;2;81;154;186:*.tsx=38;2;19;84;191:\
+*.vue=38;2;141;193;73:*.svelte=38;2;255;62;0:*.php=38;2;160;116;196:*.json=38;2;203;203;65:\
+*.c=38;2;89;158;255:*.h=38;2;160;116;196:*.cpp=38;2;81;154;186:*.hpp=38;2;160;116;196:\
+*.py=38;2;255;188;3:*.lua=38;2;81;160;207:*.java=38;2;204;62;68:*.go=38;2;0;173;216:*.rs=38;2;222;165;132:*.rb=38;2;204;52;45:\
+*.sh=38;2;137;224;81:*.zsh=38;2;137;224;81:*.sql=38;2;218;216;216:*.md=38;2;221;221;221:*.txt=38;2;137;224;81:\
+*.yml=38;2;215;0;0:*.yaml=38;2;215;0;0:*.toml=38;2;156;66;33:*.env=38;2;250;247;67:*.lock=38;2;187;187;187:\
+Makefile=38;2;109;128;134:Dockerfile=38;2;69;142;230"
 command -v batcat >/dev/null && alias bat='batcat'
 alias lg='lazygit'
 
